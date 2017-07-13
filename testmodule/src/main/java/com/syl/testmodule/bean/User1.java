@@ -3,6 +3,8 @@ package com.syl.testmodule.bean;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.syl.testmodule.aidl.Book;
+
 /**
  * Created by Bright on 2017/7/13.
  *

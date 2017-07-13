@@ -19,7 +19,7 @@ import java.util.Map;
 
 public class MyApplication extends Application {
     public static final String TAG = MyApplication.class.getSimpleName();
-    private static Context mContext;
+    private Context mContext;
     private static Handler mMainThreadHandler;
     private static int mMainThreadId;
     private Map<String, String> mMemProtocolMap = new HashMap<>();
@@ -34,7 +34,7 @@ public class MyApplication extends Application {
      *
      * @return
      */
-    public static Context getContext() {
+    public Context getContext() {
         return mContext;
     }
 
