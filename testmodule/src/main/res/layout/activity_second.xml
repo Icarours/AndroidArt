@@ -6,7 +6,7 @@
     android:id="@+id/lay_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.syl.testmodule.SecondActivity">
+    tools:context="com.syl.testmodule.activity.SecondActivity">
     <ImageView
         android:id="@+id/iv"
         android:layout_width="255dp"
@@ -19,7 +19,7 @@
         app:layout_constraintLeft_toLeftOf="@+id/lay_root"
         app:layout_constraintRight_toRightOf="@id/lay_root"
         app:layout_constraintTop_toTopOf="@id/lay_root"
-        app:layout_constraintVertical_bias="0.45"
+        app:layout_constraintVertical_bias="0.5"
         app:srcCompat="@mipmap/mm1"/>
     <Button
         android:id="@+id/btn1"
