@@ -8,6 +8,8 @@ package com.syl.testmodule.config;
  */
 
 public class Constant {
+    public static final int MSG_FROM_SERVICE = 1;//服务器端的识别码
+    public static final int MSG_FROM_CLIENT = 2;//客户器端的识别码
     //Fragment 的标题
     public static String[] mTitles = {
             "文件存储(openFileOutput)",

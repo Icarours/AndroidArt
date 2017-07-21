@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.syl.androidart">
+
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!--自定义权限(使用的时候就只要指定uses-permission就行了)-->
+    <uses-permission android:name="com.syl.testmodule.permission.ACCESS_BOOK_MANAGER_SERVICE"/>
+
     <application
         android:name=".config.MyApplication"
         android:allowBackup="true"
@@ -37,6 +43,21 @@
             android:name=".activity.NavigationActivity2"
             android:label="@string/title_activity_navigation2"
             android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".activity.SecondActivity">
+        </activity>
+        <activity android:name=".activity.MessengerActivity">
+        </activity>
+
+        <!-- 进程间通讯的服务 -->
+        <service
+            android:name=".service.MessengerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote_progress">
+        </service>
+
+        <activity android:name=".activity.BookManagerActivity">
         </activity>
     </application>
 

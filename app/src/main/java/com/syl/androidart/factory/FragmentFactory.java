@@ -4,6 +4,7 @@ import android.util.SparseArray;
 
 import com.syl.androidart.base.BaseFragment;
 import com.syl.androidart.fragment.FileFragment;
+import com.syl.androidart.fragment.ShareFileFragment;
 
 
 /**
@@ -30,6 +31,9 @@ public class FragmentFactory {
         switch (position) {
             case 0:
                 baseFragment = new FileFragment();//0文件存储(openFileOutput)
+                break;
+            case 1:
+                baseFragment = new ShareFileFragment();//1进程间通信(文件共享)
                 break;
             default:
                 break;

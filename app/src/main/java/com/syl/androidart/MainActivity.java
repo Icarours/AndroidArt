@@ -8,7 +8,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,6 +24,7 @@ import com.syl.androidart.base.BaseFragment;
 import com.syl.androidart.config.Constant;
 import com.syl.androidart.factory.FragmentFactory;
 import com.syl.androidart.fragment.FileFragment;
+import com.syl.androidart.utils.LogUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d(TAG, "onCreate()");
+        LogUtil.d(TAG, "onCreate()");
         ButterKnife.bind(this);
 
         ActionBar actionBar = getSupportActionBar();
@@ -170,30 +170,30 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(TAG,"onPause()");
+        LogUtil.d(TAG,"onPause()");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(TAG,"onResume()");
+        LogUtil.d(TAG,"onResume()");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(TAG,"onStart()");
+        LogUtil.d(TAG,"onStart()");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(TAG,"onStop()");
+        LogUtil.d(TAG,"onStop()");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d(TAG,"onRestart()");
+        LogUtil.d(TAG,"onRestart()");
     }
 }
