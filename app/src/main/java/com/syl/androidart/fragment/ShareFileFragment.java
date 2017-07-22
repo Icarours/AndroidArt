@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.syl.androidart.R;
+import com.syl.androidart.activity.BinderPoolActivity;
 import com.syl.androidart.activity.BookManagerActivity;
 import com.syl.androidart.activity.BookProviderActivity;
 import com.syl.androidart.activity.MessengerActivity;
@@ -75,7 +76,18 @@ public class ShareFileFragment extends BaseFragment {
     }
 
     /**
+     * Binder线程池
+     * @param view
+     */
+    @OnClick(R.id.btn_binder)
+    public void btn_binder(View view) {
+        Intent intent = new Intent(getContext(), BinderPoolActivity.class);
+        startActivity(intent);
+    }
+
+    /**
      * 进程间通信,socket tcp
+     *
      * @param view
      */
     @OnClick(R.id.btn_socket_tcp)

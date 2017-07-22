@@ -16,7 +16,7 @@ import com.syl.androidart.utils.LogUtil;
  * author   Bright
  * date     2017/7/22 11:56
  * desc
- * provider内容提供者
+ * provider内容提供者,不需要再清单文件中注册,其他三大组件都要在清单文件中注册
  * 除了onCreate()方法运行在main线程中外,其他5个回调都运行在binder线程池中
  */
 public class BookProvider extends ContentProvider {

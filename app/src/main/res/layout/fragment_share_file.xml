@@ -31,6 +31,11 @@
             android:layout_height="wrap_content"
             android:text="@string/btn_socket_tcp"
             android:textAllCaps="false"/>
+    <Button android:id="@+id/btn_binder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_binder"
+            android:textAllCaps="false"/>
     <TextView android:id="@+id/tv_content"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"

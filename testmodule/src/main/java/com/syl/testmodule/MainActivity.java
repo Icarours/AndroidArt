@@ -27,6 +27,7 @@ import butterknife.ButterKnife;
  * 测试,各种试验
  * 开启多进程
  * 隐式匹配:action,category,data
+ * 直接创建Activity,不需要再用Fragment了
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
