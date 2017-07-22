@@ -21,6 +21,16 @@
             android:layout_height="wrap_content"
             android:text="@string/btn_aidl"
             android:textAllCaps="false"/>
+    <Button android:id="@+id/btn_provider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_provider"
+            android:textAllCaps="false"/>
+    <Button android:id="@+id/btn_socket_tcp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_socket_tcp"
+            android:textAllCaps="false"/>
     <TextView android:id="@+id/tv_content"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"

@@ -25,4 +25,8 @@
     <string name="btn_get_data">获取数据</string>
     <string name="btn_messenger">进程间通信(messenger)</string>
     <string name="btn_aidl">进程间通信(aidl)</string>
+    <string name="btn_provider">进程间通信(provider)</string>
+    <string name="btn_socket_tcp">进程间通信(socket tcp)</string>
+    <string name="btn_send">发送</string>
+    <string name="tv_content">text</string>
 </resources>

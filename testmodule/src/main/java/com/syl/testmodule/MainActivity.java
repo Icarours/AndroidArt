@@ -7,12 +7,18 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.syl.testmodule.activity.BinderPoolActivity;
 import com.syl.testmodule.activity.SecondActivity;
 import com.syl.testmodule.utils.LogUtil;
 
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * author   Bright
@@ -22,23 +28,34 @@ import java.util.List;
  * 开启多进程
  * 隐式匹配:action,category,data
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
-    private TextView mTvContent;
+    @BindView(R.id.tv_content)
+    TextView mTvContent;
+    @BindView(R.id.btn_binder)
+    Button mBtnBinder;
+    @BindView(R.id.imageView)
+    ImageView mImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         LogUtil.d(TAG, "onCreate()");
 
+        initListener();
         logRunningTasks();//打印任务栈信息
         mTvContent = (TextView) findViewById(R.id.tv_content);
         if (savedInstanceState != null) {
             String tvContent = savedInstanceState.getString("tvContent", "");
             mTvContent.setText(tvContent);
         }
+    }
+
+    private void initListener() {
+        mBtnBinder.setOnClickListener(this);
     }
 
     /**
@@ -139,5 +156,18 @@ public class MainActivity extends AppCompatActivity {
         super.onNewIntent(intent);
         long time = intent.getLongExtra("time", 0);
         LogUtil.d(TAG, "onNewIntent()---time==" + time);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent;
+        switch (v.getId()) {
+            case R.id.btn_binder:
+                intent = new Intent(this, BinderPoolActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
     }
 }

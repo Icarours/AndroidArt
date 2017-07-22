@@ -26,7 +26,7 @@ import com.syl.androidart.utils.LogUtil;
 public class MessengerActivity extends AppCompatActivity {
     private static final String TAG = MessengerActivity.class.getSimpleName();
     //    @BindView(R.id.tv_content)
-    static TextView mTvContent;
+    static TextView mTvContent;//可能会内存泄露,不要使用static修饰View
     private Messenger mService;
     private Messenger mGetReplayMessenger = new Messenger(new MessengerHandler());//处理服务器返回的消息
 
@@ -40,7 +40,6 @@ public class MessengerActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, MessengerService.class);
         bindService(intent, mServiceConnection, BIND_AUTO_CREATE);
-
     }
 
     private ServiceConnection mServiceConnection = new ServiceConnection() {
@@ -76,6 +75,8 @@ public class MessengerActivity extends AppCompatActivity {
      */
 
     private static class MessengerHandler extends Handler {
+        private static final int MSG_DATA = 1;
+
         @Override
         public void handleMessage(Message msg) {
 //            LogUtil.d(TAG, "MessengerHandler handleMessage()");

@@ -5,7 +5,9 @@
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <!--自定义权限(使用的时候就只要指定uses-permission就行了)-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- 自定义权限(使用的时候就只要指定uses-permission就行了) -->
     <uses-permission android:name="com.syl.testmodule.permission.ACCESS_BOOK_MANAGER_SERVICE"/>
 
     <application
@@ -58,6 +60,28 @@
         </service>
 
         <activity android:name=".activity.BookManagerActivity">
+        </activity>
+        <!-- 内容提供者 -->
+        <provider
+            android:name=".provider.BookProvider"
+            android:authorities="com.syl.androidart.book.provider"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":book_provider">
+        </provider>
+
+        <activity android:name=".activity.BookProviderActivity">
+        </activity>
+        <!-- 进程间通信socket tcp -->
+        <service
+            android:name=".service.TcpServerService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity android:name=".activity.TcpClientActivity">
+        </activity>
+        <activity android:name=".activity.ContentActivity">
         </activity>
     </application>
 

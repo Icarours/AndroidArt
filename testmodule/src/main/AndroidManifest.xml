@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.syl.testmodule">
-    <!--设置权限(自定义权限:permission和uses-permission都要设置)-->
-    <permission android:name="com.syl.testmodule.permission.ACCESS_BOOK_MANAGER_SERVICE"
-                android:protectionLevel="normal"/>
+
+    <!-- 设置权限(自定义权限:permission和uses-permission都要设置) -->
+    <permission
+        android:name="com.syl.testmodule.permission.ACCESS_BOOK_MANAGER_SERVICE"
+        android:protectionLevel="normal"/>
+
     <uses-permission android:name="com.syl.testmodule.permission.ACCESS_BOOK_MANAGER_SERVICE"/>
+
     <application
         android:name=".config.MyApplication"
         android:allowBackup="true"
@@ -63,6 +67,19 @@
                 <action android:name="com.syl.BOOK_MANAGER"/>
             </intent-filter>
         </service>
+        <service
+            android:name=".service.TcpServerService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+        <service
+            android:name=".service.BinderPoolService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity android:name=".activity.BinderPoolActivity">
+        </activity>
     </application>
 
 </manifest>

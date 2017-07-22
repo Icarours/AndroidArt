@@ -11,8 +11,10 @@ import android.widget.TextView;
 
 import com.syl.androidart.R;
 import com.syl.androidart.activity.BookManagerActivity;
+import com.syl.androidart.activity.BookProviderActivity;
 import com.syl.androidart.activity.MessengerActivity;
 import com.syl.androidart.activity.SecondActivity;
+import com.syl.androidart.activity.TcpClientActivity;
 import com.syl.androidart.base.BaseFragment;
 import com.syl.androidart.bean.User;
 import com.syl.androidart.config.Constant;
@@ -50,6 +52,8 @@ public class ShareFileFragment extends BaseFragment {
     Unbinder unbinder;
     @BindView(R.id.btn_aidl)
     Button mBtnAidl;
+    @BindView(R.id.btn_provider)
+    Button mBtnProvider;
     private View mRootView;
 
     @Override
@@ -68,6 +72,27 @@ public class ShareFileFragment extends BaseFragment {
     @OnClick(R.id.btn_save_data)
     public void btn_save_data(View view) {
         persistentToFile();
+    }
+
+    /**
+     * 进程间通信,socket tcp
+     * @param view
+     */
+    @OnClick(R.id.btn_socket_tcp)
+    public void btn_socket_tcp(View view) {
+        Intent intent = new Intent(getContext(), TcpClientActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * 进程间通信,provider
+     *
+     * @param view
+     */
+    @OnClick(R.id.btn_provider)
+    public void btn_provider(View view) {
+        Intent intent = new Intent(getContext(), BookProviderActivity.class);
+        startActivity(intent);
     }
 
     /**
