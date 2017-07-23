@@ -15,9 +15,10 @@ public class Constant {
     public static String[] mTitles = {
             "文件存储(openFileOutput)",
             "进程间通信(文件共享)",
+            "跟View相关的",
     };
     //Fragment的状态,是否处于运行状态
-    public static boolean[] mFragmentIsActives = {false, false,};
+    public static boolean[] mFragmentIsActives = {false, false, false,};
     //控制日志打印工具是否打印日志
     public static boolean isLog = true;
 
