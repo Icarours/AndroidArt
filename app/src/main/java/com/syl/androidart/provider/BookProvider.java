@@ -52,7 +52,7 @@ public class BookProvider extends ContentProvider {
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
         // Implement this to handle requests to delete one or more rows.
-        LogUtil.d(TAG, "current Thread ==" + Thread.currentThread().getName());
+        LogUtil.d(TAG, "delete()--current Thread ==" + Thread.currentThread().getName());
         String tableName = getTableName(uri);
         if (tableName == null) {
             throw new IllegalArgumentException("Unsupported Uri " + uri);
@@ -68,7 +68,7 @@ public class BookProvider extends ContentProvider {
     public String getType(Uri uri) {
         // TODO: Implement this to handle requests for the MIME type of the data
         // at the given URI.
-        LogUtil.d(TAG, "current Thread ==" + Thread.currentThread().getName());
+        LogUtil.d(TAG, "getType()--current Thread ==" + Thread.currentThread().getName());
         return null;
     }
 
@@ -81,7 +81,7 @@ public class BookProvider extends ContentProvider {
      */
     @Override
     public Uri insert(Uri uri, ContentValues values) {
-        LogUtil.d(TAG, "current Thread ==" + Thread.currentThread().getName());
+        LogUtil.d(TAG, "insert()--current Thread ==" + Thread.currentThread().getName());
         String tableName = getTableName(uri);
         if (tableName == null) {
             throw new IllegalArgumentException("Unsupported Uri " + uri);
@@ -98,7 +98,7 @@ public class BookProvider extends ContentProvider {
      */
     @Override
     public boolean onCreate() {
-        LogUtil.d(TAG, "current Thread ==" + Thread.currentThread().getName());
+        LogUtil.d(TAG, "onCreate()--current Thread ==" + Thread.currentThread().getName());
         mContext = getContext();
         initProvider();//provider中可能会有一些耗时操作,最好不要在主线程中操作
         return true;
@@ -133,7 +133,7 @@ public class BookProvider extends ContentProvider {
     @Override
     public Cursor query(Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
-        LogUtil.d(TAG, "current Thread ==" + Thread.currentThread().getName());
+        LogUtil.d(TAG, "query()--current Thread ==" + Thread.currentThread().getName());
         String tableName = getTableName(uri);
         if (tableName == null) {
             throw new IllegalArgumentException("Unsupported Uri " + uri);
@@ -154,7 +154,7 @@ public class BookProvider extends ContentProvider {
     public int update(Uri uri, ContentValues values, String selection,
                       String[] selectionArgs) {
 //        throw new UnsupportedOperationException("Not yet implemented");
-        LogUtil.d(TAG, "current Thread ==" + Thread.currentThread().getName());
+        LogUtil.d(TAG, "update()--current Thread ==" + Thread.currentThread().getName());
         String tableName = getTableName(uri);
         if (tableName == null) {
             throw new IllegalArgumentException("Unsupported Uri " + uri);

@@ -76,7 +76,7 @@ public class BookProviderActivity extends AppCompatActivity {
     }
 
     /**
-     * 查询用户
+     * 查询用户,从内容提供者中获取数据
      * getContentResolver().query()方法API>=16
      */
     private void queryUser() {
@@ -95,7 +95,7 @@ public class BookProviderActivity extends AppCompatActivity {
     }
 
     /**
-     * 添加和查询书籍
+     * 添加和查询书籍,项内容提供者添加数据,从内容提供者中获取数据
      * getContentResolver().query()方法API>=16
      */
     private void insertAndQueryBook() {
@@ -105,6 +105,7 @@ public class BookProviderActivity extends AppCompatActivity {
         values.put("_id", 7);
         values.put("name", "Android基础");
         getContentResolver().insert(bookUri, values);
+        //数据库查询
         Cursor bookCursor = getContentResolver().query(bookUri, new String[]{"_id", "name"}, null, null, null);
         while (bookCursor.moveToNext()) {
             Book book = new Book();

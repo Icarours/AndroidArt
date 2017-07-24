@@ -1,5 +1,7 @@
 package com.syl.androidart.fragment;
 
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
@@ -26,17 +28,33 @@ public class ViewFragment extends BaseFragment implements View.OnClickListener {
     private static final String TAG = ViewFragment.class.getSimpleName();
     private View rootView;
     private TextView mTvContent;
-    private Button mBtn;
+    private Button mBtnMoveParams;
     private int mScaledTouchSlop;
     private ImageView mImg;
     private MotionEvent mImgEvent;
+    private Button mBtnMoveProperty;
+    private Button mBtnRestImg;
+    private int mLeftMarginStart;
+    private int mTopMarginStart;
+    private int mRightMarginStart;
+    private int mBottomMarginStart;
+    private Button mBtnMoveProperty2;
 
     @Override
     public View initView() {
         rootView = View.inflate(getContext(), R.layout.fragment_view, null);
         mTvContent = (TextView) rootView.findViewById(R.id.tv_content);
-        mBtn = (Button) rootView.findViewById(R.id.btn_move);
+        mBtnRestImg = (Button) rootView.findViewById(R.id.btn_reset_img);
+        mBtnMoveParams = (Button) rootView.findViewById(R.id.btn_move_params);
+        mBtnMoveProperty = (Button) rootView.findViewById(R.id.btn_move_property);
+        mBtnMoveProperty2 = (Button) rootView.findViewById(R.id.btn_move_property2);
         mImg = (ImageView) rootView.findViewById(R.id.img);
+
+        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) mImg.getLayoutParams();
+        mLeftMarginStart = params.leftMargin;
+        mTopMarginStart = params.topMargin;
+        mRightMarginStart = params.rightMargin;
+        mBottomMarginStart = params.bottomMargin;
         return rootView;
     }
 
@@ -77,8 +95,10 @@ public class ViewFragment extends BaseFragment implements View.OnClickListener {
 
     @Override
     public void initListener() {
-
-        mBtn.setOnClickListener(this);
+        mBtnRestImg.setOnClickListener(this);
+        mBtnMoveProperty.setOnClickListener(this);
+        mBtnMoveProperty2.setOnClickListener(this);
+        mBtnMoveParams.setOnClickListener(this);
         mImg.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -105,8 +125,17 @@ public class ViewFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn_move:
-                moveImg();//通过设置参数移动图片
+            case R.id.btn_reset_img:
+                resetImg();//将图片返回原来位置
+                break;
+            case R.id.btn_move_property:
+                movePropertyImg();//通过属性动画移动图片
+                break;
+            case R.id.btn_move_property2:
+                movePropertyImg2();//通过属性动画移动图片
+                break;
+            case R.id.btn_move_params:
+                moveParamsImg();//通过设置参数移动图片
                 break;
             default:
                 break;
@@ -114,15 +143,54 @@ public class ViewFragment extends BaseFragment implements View.OnClickListener {
     }
 
     /**
+     * 通过属性动画移动图片 ValueAnimator
+     */
+    private void movePropertyImg2() {
+        final int startX = 0;
+        final int deltaX = -100;
+        final ValueAnimator valueAnimator = ValueAnimator.ofInt(0, 1).setDuration(100);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float fraction = valueAnimator.getAnimatedFraction();//百分比
+                //scrollTo()方法中移动的是图片,ImageView本身不会动,但是为了思考的方便,可以认为移动的是ImageView,图片没动
+                mImg.scrollTo(startX + (int) (deltaX * fraction), 0);
+            }
+        });
+        valueAnimator.start();
+    }
+
+    /**
+     * 将图片返回原来位置
+     * 通过设置位置参数的方法只能让通过位置参数移动的图片回到原来的位置,对属性动画产生的位移无效
+     */
+    private void resetImg() {
+        LogUtil.d(TAG, "resetImg()");
+        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) mImg.getLayoutParams();
+        params.leftMargin = mLeftMarginStart;
+        params.topMargin = mTopMarginStart;
+        params.rightMargin = mRightMarginStart;
+        params.bottomMargin = mBottomMarginStart;
+        mImg.setLayoutParams(params);
+    }
+
+    /**
+     * 通过属性动画移动图片 ObjectAnimator
+     */
+    private void movePropertyImg() {
+        ObjectAnimator.ofFloat(mImg, "translationX", 0, 200).setDuration(100).start();
+    }
+
+    /**
      * 通过设置参数移动图片
      * ImageView的大小一直没变,通过MarginLayoutParams设置margin和padding调整ImageView及其中的图片
      */
-    private void moveImg() {
+    private void moveParamsImg() {
+
         ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) mImg.getLayoutParams();
         mImg.getWidth();
         mImg.getHeight();
         LogUtil.d(TAG, "重绘前: mImg.getWidth() = " + mImg.getWidth() + ", mImg.getHeight() = " + mImg.getHeight());
-
         params.leftMargin += 200;
 //                params.width += 300;//相当于padding
         params.height += 300;

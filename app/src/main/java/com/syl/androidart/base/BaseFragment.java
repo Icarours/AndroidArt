@@ -17,6 +17,8 @@ import android.view.ViewGroup;
 
 public abstract class BaseFragment extends Fragment {
 
+    protected View mRootView;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         init();//
@@ -26,7 +28,11 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return initView();//初始化视图
+        ////缓存Fragment页面的内容,如果mRootView存在就直接返回mRootView对象
+        if (mRootView == null) {
+            mRootView = initView();
+        }
+        return mRootView;//初始化视图
     }
 
     @Override
@@ -59,5 +65,10 @@ public abstract class BaseFragment extends Fragment {
      */
     public void initListener() {
 
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
     }
 }

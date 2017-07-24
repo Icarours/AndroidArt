@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         LogUtil.d(TAG, "onCreate()");
         ButterKnife.bind(this);
-
+        View decorView = getWindow().getDecorView();
         ActionBar actionBar = getSupportActionBar();
         //设置图标
         actionBar.setIcon(R.mipmap.ic_launcher);
