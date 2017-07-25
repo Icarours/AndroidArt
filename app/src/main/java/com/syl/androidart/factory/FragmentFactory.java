@@ -3,6 +3,7 @@ package com.syl.androidart.factory;
 import android.util.SparseArray;
 
 import com.syl.androidart.base.BaseFragment;
+import com.syl.androidart.fragment.CustomViewFragment;
 import com.syl.androidart.fragment.FileFragment;
 import com.syl.androidart.fragment.ShareFileFragment;
 import com.syl.androidart.fragment.ViewFragment;
@@ -38,6 +39,9 @@ public class FragmentFactory {
                 break;
             case 2:
                 baseFragment = new ViewFragment();//2进程间通信(文件共享)
+                break;
+            case 3:
+                baseFragment = new CustomViewFragment();//3.自定义View
                 break;
             default:
                 break;

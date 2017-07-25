@@ -90,7 +90,6 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
         mVp = (ViewPager) findViewById(R.id.vp);
         mBtnJumpMain = (Button) findViewById(R.id.btn_jump_main);
         //initIndicator();
-
     }
 
     /**
