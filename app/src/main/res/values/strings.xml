@@ -6,9 +6,9 @@
     <string name="btn_save_file">保存文件sp</string>
     <string name="btn_read_file">读取文件sp</string>
     <string name="et_content">please enter content</string>
-    <string name="item_navigation">item_navigation</string>
+    <string name="item_navigation">navigationSystemView</string>
     <string name="title_activity_navigation">NavigationActivity</string>
-    <string name="title_home">Home</string>
+    <string name="title_home">SystemView</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="item_navigation2">item_navigation2</string>
@@ -31,4 +31,6 @@
     <string name="tv_content">text</string>
     <string name="btn_binder">binder线程池</string>
     <string name="btn_circle">自定义View(圆)</string>
+    <string name="tabLayout">TabLayout</string>
+    <string name="cardView">CardView</string>
 </resources>

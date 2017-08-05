@@ -1,11 +1,16 @@
 package com.syl.androidart.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ViewTreeObserver;
 import android.widget.TextView;
 
 import com.syl.androidart.R;
+import com.syl.androidart.fragment.CardViewFragment;
+import com.syl.androidart.fragment.TabLayoutFragment;
 
 /**
  * author   Bright
@@ -22,13 +27,29 @@ public class ContentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_content);
-
+        Intent intent = getIntent();
+        int fragment_tag = intent.getIntExtra("fragment_tag", 1);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        switch (fragment_tag) {
+            case 1:
+                transaction.replace(R.id.fl_content, new TabLayoutFragment());
+                transaction.commit();
+                break;
+            case 2:
+                transaction.replace(R.id.fl_content, new CardViewFragment());
+                transaction.commit();
+                break;
+            default:
+                break;
+        }
         mTv = new TextView(this);
     }
 
     /**
      * 方法一:
      * 在Activity刚启动时获取控件的宽高
+     *
      * @param hasFocus
      */
     @Override
