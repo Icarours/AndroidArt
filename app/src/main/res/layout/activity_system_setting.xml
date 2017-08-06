@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              tools:context="com.syl.androidart.activity.SystemSettingActivity"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <TextView android:id="@+id/tv_content"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/app_name"
+              android:textAllCaps="false"
+              android:textSize="25sp"/>
+    <Button android:id="@+id/btn_window_focus_changed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取控件宽高(从onWindowFocusChanged()方法中获取)"
+            android:textAllCaps="false"/>
+    <Button android:id="@+id/btn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取控件宽高(从onStart()方法中获取)"
+            android:textAllCaps="false"/>
+</LinearLayout>

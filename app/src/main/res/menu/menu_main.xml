@@ -4,6 +4,10 @@
           android:icon="@mipmap/ic_launcher"
           android:title="@string/item_navigation"
     />
+    <item android:id="@+id/item_system_setting"
+          android:icon="@mipmap/ic_launcher"
+          android:title="@string/item_system_setting"
+    />
     <item android:id="@+id/item_navigation2"
           android:icon="@mipmap/ic_launcher"
           android:title="@string/item_navigation2"

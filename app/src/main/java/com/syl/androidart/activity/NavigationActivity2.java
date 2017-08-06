@@ -15,8 +15,15 @@ import android.view.View;
 
 import com.syl.androidart.R;
 
+/**
+ * author   Bright
+ * date     2017/8/6 11:56
+ * desc
+ * 获取系统的一些常用属性设置
+ */
 public class NavigationActivity2 extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +49,7 @@ public class NavigationActivity2 extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     @Override

@@ -28,7 +28,7 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        ////缓存Fragment页面的内容,如果mRootView存在就直接返回mRootView对象
+        //缓存Fragment页面的内容,如果mRootView存在就直接返回mRootView对象
         if (mRootView == null) {
             mRootView = initView();
         }

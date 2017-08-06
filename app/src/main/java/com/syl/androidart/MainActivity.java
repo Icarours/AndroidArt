@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.syl.androidart.activity.NavigationActivity;
 import com.syl.androidart.activity.NavigationActivity2;
 import com.syl.androidart.activity.SplashActivity;
+import com.syl.androidart.activity.SystemSettingActivity;
 import com.syl.androidart.base.BaseFragment;
 import com.syl.androidart.config.Constant;
 import com.syl.androidart.factory.FragmentFactory;
@@ -150,6 +151,11 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(this, NavigationActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.item_system_setting:
+                Toast.makeText(this, "item_system_setting was clicked..", Toast.LENGTH_SHORT).show();
+                intent = new Intent(this, SystemSettingActivity.class);
+                startActivity(intent);
+                break;
             case R.id.item_navigation2:
                 Toast.makeText(this, "item_navigation2 was clicked..", Toast.LENGTH_SHORT).show();
                 intent = new Intent(this, NavigationActivity2.class);
@@ -170,30 +176,30 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        LogUtil.d(TAG,"onPause()");
+        LogUtil.d(TAG, "onPause()");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        LogUtil.d(TAG,"onResume()");
+        LogUtil.d(TAG, "onResume()");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        LogUtil.d(TAG,"onStart()");
+        LogUtil.d(TAG, "onStart()");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        LogUtil.d(TAG,"onStop()");
+        LogUtil.d(TAG, "onStop()");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        LogUtil.d(TAG,"onRestart()");
+        LogUtil.d(TAG, "onRestart()");
     }
 }

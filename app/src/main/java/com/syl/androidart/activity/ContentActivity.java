@@ -5,12 +5,9 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.view.ViewTreeObserver;
-import android.widget.TextView;
 
 import com.syl.androidart.R;
-import com.syl.androidart.fragment.CardViewFragment;
-import com.syl.androidart.fragment.TabLayoutFragment;
+import com.syl.androidart.factory.ContentFragmentFactory;
 
 /**
  * author   Bright
@@ -21,77 +18,67 @@ import com.syl.androidart.fragment.TabLayoutFragment;
  */
 public class ContentActivity extends AppCompatActivity {
 
-    private TextView mTv;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_content);
+        //通过ActionBar展示当前Activity的类名
+        getSupportActionBar().setTitle(this.getClass().getSimpleName());
+        /*
+        从SystemViewFragment跳转过来.根据Intent携带的参数判断ContentActivity应该加载那个Fragment
+         */
         Intent intent = getIntent();
-        int fragment_tag = intent.getIntExtra("fragment_tag", 1);
+        int fragment_tag = intent.getIntExtra("fragment_tag", 0);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        switch (fragment_tag) {
+        switch (fragment_tag) {//Fragment可以使用一个Fragment工厂来提供
+            case 0:
+                transaction.replace(R.id.fl_content, ContentFragmentFactory.createFragment(0));
+                transaction.commit();
+                break;
             case 1:
-                transaction.replace(R.id.fl_content, new TabLayoutFragment());
+                transaction.replace(R.id.fl_content, ContentFragmentFactory.createFragment(1));
                 transaction.commit();
                 break;
             case 2:
-                transaction.replace(R.id.fl_content, new CardViewFragment());
+                transaction.replace(R.id.fl_content, ContentFragmentFactory.createFragment(2));
+                transaction.commit();
+                break;
+            case 3:
+                transaction.replace(R.id.fl_content, ContentFragmentFactory.createFragment(3));
+                transaction.commit();
+                break;
+            case 4:
+                transaction.replace(R.id.fl_content, ContentFragmentFactory.createFragment(4));
+                transaction.commit();
+                break;
+            case 5:
+                transaction.replace(R.id.fl_content, ContentFragmentFactory.createFragment(5));
+                transaction.commit();
+                break;
+            case 6:
+                transaction.replace(R.id.fl_content, ContentFragmentFactory.createFragment(6));
+                transaction.commit();
+                break;
+            case 7:
+                transaction.replace(R.id.fl_content, ContentFragmentFactory.createFragment(7));
+                transaction.commit();
+                break;
+            case 8:
+                transaction.replace(R.id.fl_content, ContentFragmentFactory.createFragment(8));
+                transaction.commit();
+                break;
+            case 9:
+                transaction.replace(R.id.fl_content, ContentFragmentFactory.createFragment(9));
+                transaction.commit();
+                break;
+            case 10:
+                transaction.replace(R.id.fl_content, ContentFragmentFactory.createFragment(10));
                 transaction.commit();
                 break;
             default:
                 break;
         }
-        mTv = new TextView(this);
     }
 
-    /**
-     * 方法一:
-     * 在Activity刚启动时获取控件的宽高
-     *
-     * @param hasFocus
-     */
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if (hasFocus) {
-            int width = mTv.getMeasuredWidth();
-            int height = mTv.getMeasuredHeight();
-        }
-    }
-
-    /**
-     * 方法二:
-     * 在Activity刚启动时获取控件的宽高
-     */
-    /*@Override
-    protected void onStart() {
-        super.onStart();
-        mTv.post(new Runnable() {
-            @Override
-            public void run() {
-                int width = mTv.getMeasuredWidth();
-                int height = mTv.getMeasuredHeight();
-            }
-        });
-    }*/
-
-    /**
-     * 方法三:
-     * 在Activity刚启动时获取控件的宽高
-     */
-    @Override
-    protected void onStart() {
-        super.onStart();
-        final ViewTreeObserver observer = mTv.getViewTreeObserver();
-        observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                int width = mTv.getMeasuredWidth();
-                int height = mTv.getMeasuredHeight();
-                mTv.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-            }
-        });
-    }
 }

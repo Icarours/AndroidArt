@@ -13,4 +13,14 @@
             android:layout_height="wrap_content"
             android:text="@string/cardView"
             android:textAllCaps="false"/>
+    <Button android:id="@+id/btn_recycle_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recycleView"
+            android:textAllCaps="false"/>
+    <Button android:id="@+id/btn_list_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/listView"
+            android:textAllCaps="false"/>
 </LinearLayout>

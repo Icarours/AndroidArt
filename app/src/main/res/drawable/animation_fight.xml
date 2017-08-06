@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list
+    android:oneshot="false"
+    android:visible="false"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/fight1" android:duration="200"/>
+    <item android:drawable="@drawable/fight2" android:duration="200"/>
+    <item android:drawable="@drawable/fight3" android:duration="200"/>
+    <item android:drawable="@drawable/fight4" android:duration="200"/>
+    <item android:drawable="@drawable/fight5" android:duration="200"/>
+    <item android:drawable="@drawable/fight6" android:duration="200"/>
+    <item android:drawable="@drawable/fight7" android:duration="200"/>
+    <item android:drawable="@drawable/fight8" android:duration="200"/>
+    <item android:drawable="@drawable/fight9" android:duration="200"/>
+    <item android:drawable="@drawable/fight10" android:duration="200"/>
+    <item android:drawable="@drawable/fight11" android:duration="200"/>
+    <item android:drawable="@drawable/fight12" android:duration="200"/>
+    <item android:drawable="@drawable/fight13" android:duration="200"/>
+    <item android:drawable="@drawable/fight14" android:duration="200"/>
+    <item android:drawable="@drawable/fight15" android:duration="200"/>
+    <item android:drawable="@drawable/fight16" android:duration="200"/>
+</animation-list>

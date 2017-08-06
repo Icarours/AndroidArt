@@ -9,7 +9,7 @@
     <string name="item_navigation">navigationSystemView</string>
     <string name="title_activity_navigation">NavigationActivity</string>
     <string name="title_home">SystemView</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_animation">Animation</string>
     <string name="title_notifications">Notifications</string>
     <string name="item_navigation2">item_navigation2</string>
     <string name="item_splash">item_splash</string>
@@ -33,4 +33,8 @@
     <string name="btn_circle">自定义View(圆)</string>
     <string name="tabLayout">TabLayout</string>
     <string name="cardView">CardView</string>
+    <string name="recycleView">recycleView</string>
+    <string name="listView">listView</string>
+    <string name="item_system_setting">获取常用系统属性</string>
+    <string name="title_image">image</string>
 </resources>

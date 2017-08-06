@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <Button android:id="@+id/btn_glide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="glide"
+            android:textAllCaps="false"
+            android:textSize="25sp"/>
+    <Button android:id="@+id/btn_fresco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fressco"
+            android:textAllCaps="false"
+            android:textSize="25sp"/>
+    <Button android:id="@+id/btn_picasso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Picasso"
+            android:textAllCaps="false"
+            android:textSize="25sp"/>
+    <Button android:id="@+id/btn_uil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Universal Image Loader"
+            android:textAllCaps="false"
+            android:textSize="25sp"/>
+</LinearLayout>

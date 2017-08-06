@@ -24,13 +24,19 @@ import butterknife.Unbinder;
 
 public class SystemViewFragment extends BaseFragment implements View.OnClickListener {
 
-    private static final int BTN_TAB_LAYOUT = 1;
-    private static final int BTN_CARD_VIEW = 2;
+    private static final int BTN_TAB_LAYOUT = 0;
+    private static final int BTN_CARD_VIEW = 1;
+    private static final int BTN_RECYCLE_VIEW = 2;
+    private static final int BTN_LIST_VIEW = 3;
     @BindView(R.id.btn_tab_layout)
     Button mBtnTabLayout;
     @BindView(R.id.btn_card_view)
     Button mBtnCardView;
     Unbinder unbinder;
+    @BindView(R.id.btn_recycle_view)
+    Button mBtnRecycleView;
+    @BindView(R.id.btn_list_view)
+    Button mBtnListView;
     private View mRootView;
 
     @Override
@@ -57,6 +63,8 @@ public class SystemViewFragment extends BaseFragment implements View.OnClickList
         super.initListener();
         mBtnTabLayout.setOnClickListener(this);
         mBtnCardView.setOnClickListener(this);
+        mBtnRecycleView.setOnClickListener(this);
+        mBtnListView.setOnClickListener(this);
     }
 
     @Override
@@ -69,6 +77,14 @@ public class SystemViewFragment extends BaseFragment implements View.OnClickList
                 break;
             case R.id.btn_card_view:
                 intent.putExtra("fragment_tag", BTN_CARD_VIEW);
+                startActivity(intent);
+                break;
+            case R.id.btn_recycle_view:
+                intent.putExtra("fragment_tag", BTN_RECYCLE_VIEW);
+                startActivity(intent);
+                break;
+            case R.id.btn_list_view:
+                intent.putExtra("fragment_tag", BTN_LIST_VIEW);
                 startActivity(intent);
                 break;
             default:

@@ -13,7 +13,7 @@ import com.syl.androidart.utils.LogUtil;
 /**
  * Created by Bright on 2017/7/25.
  *
- * @Describe 粗糙的ViewPager
+ * @Describe 粗糙的ViewPager(没有什么使用价值)
  * @Called
  */
 

@@ -19,7 +19,10 @@ public class CardViewFragment extends BaseFragment {
 
     @Override
     public View initView() {
-        mRootView = View.inflate(getContext(), R.layout.fragment_card_view, null);
+        //缓存Fragment页面的内容,如果mRootView存在就直接返回mRootView对象
+        if (mRootView == null) {
+            mRootView = View.inflate(getContext(), R.layout.fragment_card_view, null);
+        }
         return mRootView;
     }
 }

@@ -5,6 +5,10 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Process;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -68,6 +72,23 @@ public class MyApplication extends Application {
          */
         //3.Handler
         mMainThreadHandler = new Handler();
+
+        //初始化Fresco
+        Fresco.initialize(this);
+        //初始化ImageLoader
+        ImageLoaderConfiguration configuration = ImageLoaderConfiguration.createDefault(this);
+        // method.
+        //		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)//
+        //				.threadPriority(Thread.NORM_PRIORITY - 2)//
+        //				.denyCacheImageMultipleSizesInMemory()//
+        //				.diskCacheFileNameGenerator(new Md5FileNameGenerator())//
+        //				.diskCacheSize(50 * 1024 * 1024) // 50 Mb
+        //				.memoryCache(new LruMemoryCache(4 * 1024 * 1024)).tasksProcessingOrder(QueueProcessingType.LIFO)//
+        //				.writeDebugLogs() // Remove for release app
+        //				.build();
+        // Initialize ImageLoader with configuration.
+        ImageLoader.getInstance().init(configuration);
+
         super.onCreate();
     }
 }

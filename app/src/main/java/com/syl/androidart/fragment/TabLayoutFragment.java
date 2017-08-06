@@ -38,7 +38,10 @@ public class TabLayoutFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mRootView = View.inflate(getContext(), R.layout.fragment_tablayout, null);
+        //缓存Fragment页面的内容,如果mRootView存在就直接返回mRootView对象
+        if (mRootView == null) {
+            mRootView = View.inflate(getContext(), R.layout.fragment_tablayout, null);
+        }
         unbinder = ButterKnife.bind(this, mRootView);
 
         PageFragmentPagerAdapter pagerAdapter = new PageFragmentPagerAdapter(getActivity().getSupportFragmentManager(), getContext());

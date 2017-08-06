@@ -83,13 +83,16 @@
         </activity>
         <activity android:name=".activity.ContentActivity">
         </activity>
-        <!--从testModule中考过来的,忘记注册了,总是没有出现预料中的结果-->
+        <!-- 从testModule中考过来的,忘记注册了,总是没有出现预料中的结果 -->
         <service
             android:name=".service.BinderPoolService"
             android:enabled="true"
             android:exported="true">
         </service>
+
         <activity android:name=".activity.BinderPoolActivity"/>
+        <activity android:name=".activity.SystemSettingActivity">
+        </activity>
     </application>
 
 </manifest>

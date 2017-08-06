@@ -14,7 +14,7 @@ import com.syl.androidart.fragment.ViewFragment;
  *
  * @Describe Fragment 的工厂
  * 缓存管理,如果工厂缓存中有指定的Fragment对象,就直接从缓存拿到该对象
- * 展示巨日内容的Fragment
+ * 展示具体内容的Fragment
  * @Called
  */
 

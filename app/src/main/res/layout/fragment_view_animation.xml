@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button android:id="@+id/btn_translate_x"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="平移x"
+                android:textAllCaps="false"
+                android:textSize="25sp"/>
+        <Button android:id="@+id/btn_translate_y"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="平移y"
+                android:textAllCaps="false"
+                android:textSize="25sp"/>
+        <Button android:id="@+id/btn_rotate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="旋转rotate"
+                android:textAllCaps="false"
+                android:textSize="25sp"/>
+        <Button android:id="@+id/btn_scale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="缩放scale"
+                android:textAllCaps="false"
+                android:textSize="25sp"/>
+        <Button android:id="@+id/btn_alpha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="透明度alpha"
+                android:textAllCaps="false"
+                android:textSize="25sp"/>
+        <Button android:id="@+id/btn_set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="动画集合"
+                android:textAllCaps="false"
+                android:textSize="25sp"/>
+        <ImageView android:id="@+id/iv_img"
+                   android:layout_width="100dp"
+                   android:layout_height="100dp"
+                   android:scaleType="centerCrop"
+                   android:layout_gravity="center"
+                   android:src="@mipmap/mm2"/>
+    </LinearLayout>
+</ScrollView>
