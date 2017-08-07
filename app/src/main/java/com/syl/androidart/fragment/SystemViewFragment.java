@@ -28,6 +28,7 @@ public class SystemViewFragment extends BaseFragment implements View.OnClickList
     private static final int BTN_CARD_VIEW = 1;
     private static final int BTN_RECYCLE_VIEW = 2;
     private static final int BTN_LIST_VIEW = 3;
+    private static final int BTN_WEB_VIEW = 14;
     @BindView(R.id.btn_tab_layout)
     Button mBtnTabLayout;
     @BindView(R.id.btn_card_view)
@@ -37,6 +38,8 @@ public class SystemViewFragment extends BaseFragment implements View.OnClickList
     Button mBtnRecycleView;
     @BindView(R.id.btn_list_view)
     Button mBtnListView;
+    @BindView(R.id.btn_web_view)
+    Button mBtnWebView;
     private View mRootView;
 
     @Override
@@ -65,6 +68,7 @@ public class SystemViewFragment extends BaseFragment implements View.OnClickList
         mBtnCardView.setOnClickListener(this);
         mBtnRecycleView.setOnClickListener(this);
         mBtnListView.setOnClickListener(this);
+        mBtnWebView.setOnClickListener(this);
     }
 
     @Override
@@ -77,6 +81,10 @@ public class SystemViewFragment extends BaseFragment implements View.OnClickList
                 break;
             case R.id.btn_card_view:
                 intent.putExtra("fragment_tag", BTN_CARD_VIEW);
+                startActivity(intent);
+                break;
+            case R.id.btn_web_view:
+                intent.putExtra("fragment_tag", BTN_WEB_VIEW);
                 startActivity(intent);
                 break;
             case R.id.btn_recycle_view:

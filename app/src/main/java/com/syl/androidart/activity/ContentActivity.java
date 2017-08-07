@@ -76,9 +76,24 @@ public class ContentActivity extends AppCompatActivity {
                 transaction.replace(R.id.fl_content, ContentFragmentFactory.createFragment(10));
                 transaction.commit();
                 break;
+            case 11:
+                transaction.replace(R.id.fl_content, ContentFragmentFactory.createFragment(11));
+                transaction.commit();
+                break;
+            case 12:
+                transaction.replace(R.id.fl_content, ContentFragmentFactory.createFragment(12));
+                transaction.commit();
+                break;
+            case 13:
+                transaction.replace(R.id.fl_content, ContentFragmentFactory.createFragment(13));
+                transaction.commit();
+                break;
+            case 14:
+                transaction.replace(R.id.fl_content, ContentFragmentFactory.createFragment(14));
+                transaction.commit();
+                break;
             default:
                 break;
         }
     }
-
 }

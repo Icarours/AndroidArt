@@ -15,7 +15,7 @@ import com.syl.androidart.fragment.PageFragment;
  */
 
 public class PageFragmentPagerAdapter extends FragmentPagerAdapter {
-    private String[] mTitles = new String[]{"Tab1", "Tab2", "Tab3", "Tab4", "Tab5", "Tab6", "Tab7", "Tab8"};
+    private String[] mTitles = new String[]{"Tab1", "Tab2", "Tab3", "Tab4", "Tab5", "Tab6"};
     private final int COUNT = mTitles.length;
     private Context mContext;
 

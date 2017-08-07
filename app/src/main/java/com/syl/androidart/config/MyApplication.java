@@ -88,7 +88,7 @@ public class MyApplication extends Application {
         //				.build();
         // Initialize ImageLoader with configuration.
         ImageLoader.getInstance().init(configuration);
-
         super.onCreate();
     }
+
 }

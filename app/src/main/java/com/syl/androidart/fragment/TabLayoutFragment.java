@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.syl.androidart.R;
 import com.syl.androidart.adapter.PageFragmentPagerAdapter;
 import com.syl.androidart.base.BaseFragment;
+import com.syl.androidart.utils.LogUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,7 +24,7 @@ import butterknife.Unbinder;
  */
 
 public class TabLayoutFragment extends BaseFragment {
-
+    public static final String TAG = TabLayoutFragment.class.getSimpleName();
     @BindView(R.id.tabLayout)
     TabLayout mTabLayout;
     @BindView(R.id.viewPager)
@@ -39,15 +40,22 @@ public class TabLayoutFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //缓存Fragment页面的内容,如果mRootView存在就直接返回mRootView对象
-        if (mRootView == null) {
-            mRootView = View.inflate(getContext(), R.layout.fragment_tablayout, null);
-        }
+//        if (mRootView == null) {
+        //特别注意,这个地方不能使用缓存复用,否则会报空指针,也有可能是butterKnife的问题
+        mRootView = View.inflate(getActivity(), R.layout.fragment_tablayout, null);
+//        }
         unbinder = ButterKnife.bind(this, mRootView);
 
-        PageFragmentPagerAdapter pagerAdapter = new PageFragmentPagerAdapter(getActivity().getSupportFragmentManager(), getContext());
+        return mRootView;
+    }
+
+    @Override
+    public void initData() {
+        PageFragmentPagerAdapter pagerAdapter = new PageFragmentPagerAdapter(getActivity().getSupportFragmentManager(), getActivity());
+        LogUtil.d(TAG, "mViewPager==" + mViewPager);
+        LogUtil.d(TAG, "pagerAdapter==" + pagerAdapter);
         mViewPager.setAdapter(pagerAdapter);
         mTabLayout.setupWithViewPager(mViewPager, true);
-        return mRootView;
     }
 
     @Override

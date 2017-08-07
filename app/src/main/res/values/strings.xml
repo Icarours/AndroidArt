@@ -10,7 +10,6 @@
     <string name="title_activity_navigation">NavigationActivity</string>
     <string name="title_home">SystemView</string>
     <string name="title_animation">Animation</string>
-    <string name="title_notifications">Notifications</string>
     <string name="item_navigation2">item_navigation2</string>
     <string name="item_splash">item_splash</string>
     <string name="title_activity_navigation2">NavigationActivity2</string>
@@ -37,4 +36,7 @@
     <string name="listView">listView</string>
     <string name="item_system_setting">获取常用系统属性</string>
     <string name="title_image">image</string>
+    <string name="title_frameworks">frameworks</string>
+    <string name="webView">webView</string>
+    <string name="btn_web_view">WebView</string>
 </resources>

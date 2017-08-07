@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.syl.androidart.R;
 import com.syl.androidart.fragment.AnimationFragment;
+import com.syl.androidart.fragment.FrameworksFragment;
 import com.syl.androidart.fragment.ImageLoadFragment;
 import com.syl.androidart.fragment.SystemViewFragment;
 
@@ -44,8 +45,10 @@ public class NavigationActivity extends AppCompatActivity {
                     transaction.replace(R.id.fragment_content, new ImageLoadFragment());
                     transaction.commit();
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                case R.id.navigation_frameworks:
+                    mTextMessage.setText(R.string.title_frameworks);
+                    transaction.replace(R.id.fragment_content, new FrameworksFragment());
+                    transaction.commit();
                     return true;
             }
             return false;

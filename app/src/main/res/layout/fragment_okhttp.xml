@@ -7,31 +7,38 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Button android:id="@+id/btn_tab_layout"
+        <Button android:id="@+id/btn_ok_http_get"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tabLayout"
+                android:text="ok_http_get"
                 android:textAllCaps="false"/>
-        <Button android:id="@+id/btn_card_view"
+        <Button android:id="@+id/btn_ok_http_post"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cardView"
+                android:clickable="false"
+                android:text="ok_http_post"
                 android:textAllCaps="false"/>
-        <Button android:id="@+id/btn_web_view"
+        <Button android:id="@+id/btn_ok_http_post_file"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/webView"
+                android:text="ok_http_post_file"
                 android:textAllCaps="false"/>
-        <Button android:id="@+id/btn_recycle_view"
+        <Button android:id="@+id/btn_ok_http_down_file"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/recycleView"
+                android:text="ok_http_down_file"
                 android:textAllCaps="false"/>
-        <Button android:id="@+id/btn_list_view"
+        <Button android:id="@+id/btn_ok_http_multipart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/listView"
+                android:clickable="false"
+                android:text="ok_http_multipart"
                 android:textAllCaps="false"/>
-
+        <ImageView android:id="@+id/iv_img"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+        <WebView android:id="@+id/wv"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"/>
     </LinearLayout>
 </ScrollView>

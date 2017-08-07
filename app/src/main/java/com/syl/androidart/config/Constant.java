@@ -17,9 +17,10 @@ public class Constant {
             "进程间通信(文件共享)",
             "跟View相关的",
             "自定义View",
+            "mvc",
     };
     //Fragment的状态,是否处于运行状态
-    public static boolean[] mFragmentIsActives = {false, false, false,false,};
+    public static boolean[] mFragmentIsActives = {false, false, false,false,false,};
     //控制日志打印工具是否打印日志
     public static boolean isLog = true;
 

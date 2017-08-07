@@ -2,6 +2,8 @@ package com.syl.androidart.fragment;
 
 import android.content.Context;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -36,12 +38,16 @@ public class FileFragment extends BaseFragment implements View.OnClickListener {
     private TextView mTvContent;
     private EditText mEtContent;
     private BufferedReader mBufferedReader;
+    private WebView mWebView;
 
     @Override
     public View initView() {
         mRootView = View.inflate(getContext(), R.layout.fragment_file, null);
         mTvContent = (TextView) mRootView.findViewById(R.id.tv_content);
         mEtContent = (EditText) mRootView.findViewById(R.id.et_content);
+
+        mWebView = (WebView) mRootView.findViewById(R.id.wv);
+
         return mRootView;
     }
 
@@ -54,6 +60,7 @@ public class FileFragment extends BaseFragment implements View.OnClickListener {
     public void initListener() {
         mRootView.findViewById(R.id.btn_save_file).setOnClickListener(this);
         mRootView.findViewById(R.id.btn_read_file).setOnClickListener(this);
+        mRootView.findViewById(R.id.btn_web_view).setOnClickListener(this);
     }
 
     /**
@@ -128,6 +135,19 @@ public class FileFragment extends BaseFragment implements View.OnClickListener {
                 String s = readFile();
                 mTvContent.setText(s);
                 break;
+            case R.id.btn_web_view:
+                mWebView.loadUrl("https://www.baidu.com/");
+//        web.loadUrl("http://www.9ku.com/");
+
+                mWebView.getSettings().setJavaScriptEnabled(true);  //加上这一行网页为响应式的
+                mWebView.setWebViewClient(new WebViewClient() {
+                    @Override
+                    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                        view.loadUrl(url);
+                        return true;   //返回true， 立即跳转，返回false,打开网页有延时
+                    }
+                });
+                break;
             default:
                 break;
         }
@@ -139,5 +159,6 @@ public class FileFragment extends BaseFragment implements View.OnClickListener {
         String input = mEtContent.getText().toString();
         saveFile(input);
     }
+
 }
 

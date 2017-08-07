@@ -5,6 +5,7 @@ import android.util.SparseArray;
 import com.syl.androidart.base.BaseFragment;
 import com.syl.androidart.fragment.CustomViewFragment;
 import com.syl.androidart.fragment.FileFragment;
+import com.syl.androidart.fragment.MvcFragment;
 import com.syl.androidart.fragment.ShareFileFragment;
 import com.syl.androidart.fragment.ViewFragment;
 
@@ -42,6 +43,9 @@ public class FragmentFactory {
                 break;
             case 3:
                 baseFragment = new CustomViewFragment();//3.自定义View
+                break;
+            case 4:
+                baseFragment = new MvcFragment();//4.Mvc
                 break;
             default:
                 break;

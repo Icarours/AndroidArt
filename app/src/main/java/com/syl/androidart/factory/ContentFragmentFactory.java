@@ -7,10 +7,14 @@ import com.syl.androidart.fragment.CardViewFragment;
 import com.syl.androidart.fragment.DrawableAnimationFragment;
 import com.syl.androidart.fragment.FrescoFragment;
 import com.syl.androidart.fragment.GlideFragment;
+import com.syl.androidart.fragment.GreenDaoFragment;
 import com.syl.androidart.fragment.ListViewFragment;
+import com.syl.androidart.fragment.MyWebViewFragment;
+import com.syl.androidart.fragment.OkHttpFragment;
 import com.syl.androidart.fragment.PicassoFragment;
 import com.syl.androidart.fragment.PropertyAnimationFragment;
 import com.syl.androidart.fragment.RecycleViewFragment;
+import com.syl.androidart.fragment.RetrofitFragment;
 import com.syl.androidart.fragment.TabLayoutFragment;
 import com.syl.androidart.fragment.UILFragment;
 import com.syl.androidart.fragment.ViewAnimationFragment;
@@ -42,16 +46,19 @@ public class ContentFragmentFactory {
              *系统提供的控件
              */
             case 0:
-                baseFragment = new CardViewFragment();//0 CardView
+                baseFragment = new TabLayoutFragment();//0 TabLayout
                 break;
             case 1:
-                baseFragment = new TabLayoutFragment();//1 TabLayout
+                baseFragment = new CardViewFragment();//1 CardView
                 break;
             case 2:
                 baseFragment = new RecycleViewFragment();//2 RecycleView
                 break;
             case 3:
                 baseFragment = new ListViewFragment();//3 ListView
+                break;
+            case 14:
+                baseFragment = new MyWebViewFragment();//14 WebView
                 break;
             /*
              * 动画举例
@@ -80,6 +87,18 @@ public class ContentFragmentFactory {
             case 10:
                 baseFragment = new UILFragment();//10 uil
                 break;
+            /*
+             * 常见的加载框架
+             */
+            case 11:
+                baseFragment = new OkHttpFragment();//11 okhttp
+                break;
+            case 12:
+                baseFragment = new RetrofitFragment();//12 retrofit
+                break;
+            case 13:
+                baseFragment = new GreenDaoFragment();//13 GreenDao
+                //14在前面
             default:
                 break;
         }
