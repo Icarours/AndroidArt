@@ -16,5 +16,8 @@
         android:background="#000000"
         android:padding="20dp"
         app:circle_color="@color/colorAccent"/>
-
+    <com.syl.androidart.view.WaveView
+        android:id="@+id/wv_wave"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"/>
 </LinearLayout>

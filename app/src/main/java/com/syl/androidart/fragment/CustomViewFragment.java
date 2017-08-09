@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.syl.androidart.R;
 import com.syl.androidart.base.BaseFragment;
+import com.syl.androidart.view.WaveView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,6 +27,8 @@ public class CustomViewFragment extends BaseFragment implements View.OnClickList
     @BindView(R.id.btn_circle)
     Button mBtnCircle;
     Unbinder unbinder;
+    @BindView(R.id.wv_wave)
+    WaveView mWvWave;
     private View mRootView;
 
     @Override
@@ -38,6 +41,7 @@ public class CustomViewFragment extends BaseFragment implements View.OnClickList
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mRootView = View.inflate(getContext(), R.layout.fragment_custom_view, null);
         unbinder = ButterKnife.bind(this, mRootView);
+        mWvWave.setRunning();
         return mRootView;
     }
 

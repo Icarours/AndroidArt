@@ -45,4 +45,6 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.8.1'
     //okhttp3
     compile 'com.google.code.gson:gson:2.8.1'
+    // https://mvnrepository.com/artifact/com.belerweb/pinyin4j
+    compile group: 'com.belerweb', name: 'pinyin4j', version: '2.5.1'
 }

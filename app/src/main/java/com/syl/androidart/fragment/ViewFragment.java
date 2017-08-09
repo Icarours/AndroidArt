@@ -19,7 +19,7 @@ import com.syl.androidart.utils.LogUtil;
 /**
  * Created by Bright on 2017/7/24.
  *
- * @Describe 自定义View
+ * @Describe 跟View先关的一些东西
  * @Called
  */
 

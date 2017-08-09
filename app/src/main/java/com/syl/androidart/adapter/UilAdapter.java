@@ -17,7 +17,7 @@ import com.syl.androidart.base.MyBaseAdapter;
 /**
  * Created by Bright on 2017/8/7.
  *
- * @Describe Uil ListView 对应的Adapter
+ * @Describe Universal Image Loader ListView 对应的Adapter
  * @Called
  */
 
@@ -41,13 +41,14 @@ public class UilAdapter extends MyBaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
+        //设置图片显示的属性
         DisplayImageOptions option = new DisplayImageOptions.Builder()
                 .resetViewBeforeLoading(true)
-                .cacheOnDisk(true)
-                .imageScaleType(ImageScaleType.EXACTLY)
-                .bitmapConfig(Bitmap.Config.RGB_565)
+                .cacheOnDisk(true)//是否在磁盘缓存
+                .imageScaleType(ImageScaleType.EXACTLY)//缩放格式
+                .bitmapConfig(Bitmap.Config.RGB_565)//图片格式
                 .considerExifParams(true)
-                .displayer(new FadeInBitmapDisplayer(300))
+                .displayer(new FadeInBitmapDisplayer(300))//淡入阴影效果
                 .build();
 
         ImageLoader.getInstance().displayImage(mData[position], holder.mIvItem, option);

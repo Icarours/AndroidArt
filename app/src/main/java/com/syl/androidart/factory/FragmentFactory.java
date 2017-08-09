@@ -6,6 +6,7 @@ import com.syl.androidart.base.BaseFragment;
 import com.syl.androidart.fragment.CustomViewFragment;
 import com.syl.androidart.fragment.FileFragment;
 import com.syl.androidart.fragment.MvcFragment;
+import com.syl.androidart.fragment.ServiceFragment;
 import com.syl.androidart.fragment.ShareFileFragment;
 import com.syl.androidart.fragment.ViewFragment;
 
@@ -36,16 +37,19 @@ public class FragmentFactory {
                 baseFragment = new FileFragment();//0文件存储(openFileOutput)
                 break;
             case 1:
-                baseFragment = new ShareFileFragment();//1进程间通信
+                baseFragment = new ShareFileFragment();//1进程间通信(文件共享)
                 break;
             case 2:
-                baseFragment = new ViewFragment();//2进程间通信(文件共享)
+                baseFragment = new ViewFragment();//2.文件共享
                 break;
             case 3:
                 baseFragment = new CustomViewFragment();//3.自定义View
                 break;
             case 4:
                 baseFragment = new MvcFragment();//4.Mvc
+                break;
+            case 5:
+                baseFragment = new ServiceFragment();//4.Mvc
                 break;
             default:
                 break;

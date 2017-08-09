@@ -6,7 +6,7 @@
     <string name="btn_save_file">保存文件sp</string>
     <string name="btn_read_file">读取文件sp</string>
     <string name="et_content">please enter content</string>
-    <string name="item_navigation">navigationSystemView</string>
+    <string name="item_navigation">SystemView</string>
     <string name="title_activity_navigation">NavigationActivity</string>
     <string name="title_home">SystemView</string>
     <string name="title_animation">Animation</string>
@@ -39,4 +39,11 @@
     <string name="title_frameworks">frameworks</string>
     <string name="webView">webView</string>
     <string name="btn_web_view">WebView</string>
+
+    <string name="btn_start_service">使用start启动Service</string>
+    <string name="btn_bind_service">使用bind方法开启service</string>
+    <string name="btn_call_method_in_service">调用service中的方法</string>
+    <string name="tv_service_banzheng">办证Service</string>
+    <string name="btn_unbind_service">解除绑定</string>
+    <string name="btn_get_current_time">获取当下的时间</string>
 </resources>

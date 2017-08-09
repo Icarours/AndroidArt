@@ -85,7 +85,7 @@ public class TcpClientActivity extends AppCompatActivity {
 
     /**
      * 连接获取服务器端传输的数据
-     * (一直连接不上服务器端,郁闷)
+     * (失败一直连接不上服务器端,郁闷)
      */
     private void connectedTcpServer() {
 //        Socket socket = null;

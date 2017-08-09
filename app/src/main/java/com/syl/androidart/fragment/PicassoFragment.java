@@ -18,7 +18,7 @@ import butterknife.Unbinder;
 /**
  * Created by Bright on 2017/8/6.
  *
- * @Describe
+ * @Describe Picasso举例
  * @Called
  */
 
@@ -45,7 +45,7 @@ public class PicassoFragment extends BaseFragment {
     }
 
     @Override
-    public void initListener() {
+    public void initData() {
         mLv.setAdapter(new PicassoAdapter(getActivity()));
     }
 

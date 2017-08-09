@@ -1,1 +1,1 @@
-include ':app', ':testmodule'
+include ':app', ':testmodule', ':lib_test', ':wxshare2008'

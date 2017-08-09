@@ -18,7 +18,6 @@ import com.syl.androidart.activity.SecondActivity;
 import com.syl.androidart.activity.TcpClientActivity;
 import com.syl.androidart.base.BaseFragment;
 import com.syl.androidart.bean.User;
-import com.syl.androidart.config.Constant;
 import com.syl.androidart.utils.IoUtil;
 import com.syl.androidart.utils.LogUtil;
 
@@ -137,15 +136,19 @@ public class ShareFileFragment extends BaseFragment {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                // TODO: 2017/7/13 创建文件
+                // TODO: 2017/7/13 创建文件(失败)
                 User user = new User(1, "Tom", true);
-                File dir = new File(Constant.DIR);
+                File dir = new File("/sdcard/test.txt");
                 if (!dir.exists()) {//如果文件夹不存在,就创建文件夹
-                    dir.mkdir();
+                    try {
+                        dir.createNewFile();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
                 ObjectOutputStream oos = null;
                 try {
-                    File cacheFile = new File("test.txt");
+                    File cacheFile = new File("/sdcard/test.txt");
                     oos = new ObjectOutputStream(new FileOutputStream(cacheFile));
                     oos.writeObject(user);
                     LogUtil.d(this.getClass().getSimpleName(), "persistentToFile==" + user);

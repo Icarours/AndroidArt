@@ -93,6 +93,12 @@
         <activity android:name=".activity.BinderPoolActivity"/>
         <activity android:name=".activity.SystemSettingActivity">
         </activity>
+        <!--办证-->
+        <service
+            android:name=".service.BanzhengService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
     </application>
 
 </manifest>

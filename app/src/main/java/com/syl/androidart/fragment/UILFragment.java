@@ -18,7 +18,7 @@ import butterknife.Unbinder;
 /**
  * Created by Bright on 2017/8/6.
  *
- * @Describe
+ * @Describe Universal Image Loader 举例
  * @Called
  */
 
