@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         if (savedInstanceState == null) {
-            selectItem(0);
+            selectItem(2);
         }
         /**
          *ActionBarDrawerToggle要用v7包下的

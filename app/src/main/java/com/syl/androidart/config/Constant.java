@@ -19,9 +19,12 @@ public class Constant {
             "自定义View",
             "mvc",
             "service",
+            "提交post请求",
+            "使用Base64加密图片",
     };
     //Fragment的状态,是否处于运行状态
-    public static boolean[] mFragmentIsActives = {false, false, false,
+    public static boolean[] mFragmentIsActives = {false, false, false, false,
+            false,
             false,
             false,
             false,};

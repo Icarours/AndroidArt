@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.syl.androidart.R;
 import com.syl.androidart.activity.ContentActivity;
 import com.syl.androidart.base.BaseFragment;
@@ -24,7 +26,7 @@ import butterknife.Unbinder;
  */
 
 public class ImageLoadFragment extends BaseFragment implements View.OnClickListener {
-
+    public static final String TAG = ImageLoadFragment.class.getSimpleName();
     private static final int BTN_GLIDE = 7;
     private static final int BTN_FRESCO = 8;
     private static final int BTN_PICASSO = 9;
@@ -38,6 +40,8 @@ public class ImageLoadFragment extends BaseFragment implements View.OnClickListe
     @BindView(R.id.btn_uil)
     Button mBtnUil;
     Unbinder unbinder;
+    @BindView(R.id.iv_img)
+    ImageView mIvImg;
     private View mRootView;
 
     @Override
@@ -52,6 +56,9 @@ public class ImageLoadFragment extends BaseFragment implements View.OnClickListe
             mRootView = View.inflate(getContext(), R.layout.fragment_image_load, null);
         }
         unbinder = ButterKnife.bind(this, mRootView);
+        Glide.with(getActivity()).load(R.mipmap.mm3).into(mIvImg);
+//        Uri uri = UriUtils.resourceIdToUri(getActivity(), R.mipmap.mm3);
+//        Glide.with(getActivity()).load(uri).into(mIvImg);
         return mRootView;
     }
 

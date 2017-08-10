@@ -18,6 +18,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    useLibrary 'org.apache.http.legacy'//添加httpclient
 }
 
 dependencies {
@@ -47,4 +48,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.1'
     // https://mvnrepository.com/artifact/com.belerweb/pinyin4j
     compile group: 'com.belerweb', name: 'pinyin4j', version: '2.5.1'
+
 }

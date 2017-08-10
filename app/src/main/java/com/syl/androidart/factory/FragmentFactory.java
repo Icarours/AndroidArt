@@ -4,8 +4,10 @@ import android.util.SparseArray;
 
 import com.syl.androidart.base.BaseFragment;
 import com.syl.androidart.fragment.CustomViewFragment;
+import com.syl.androidart.fragment.EncryptedFragment;
 import com.syl.androidart.fragment.FileFragment;
 import com.syl.androidart.fragment.MvcFragment;
+import com.syl.androidart.fragment.PostFragment;
 import com.syl.androidart.fragment.ServiceFragment;
 import com.syl.androidart.fragment.ShareFileFragment;
 import com.syl.androidart.fragment.ViewFragment;
@@ -49,7 +51,13 @@ public class FragmentFactory {
                 baseFragment = new MvcFragment();//4.Mvc
                 break;
             case 5:
-                baseFragment = new ServiceFragment();//4.Mvc
+                baseFragment = new ServiceFragment();//5.Mvc
+                break;
+            case 6:
+                baseFragment = new PostFragment();//6.提交post请求
+                break;
+            case 7:
+                baseFragment = new EncryptedFragment();//7.提交post请求
                 break;
             default:
                 break;
